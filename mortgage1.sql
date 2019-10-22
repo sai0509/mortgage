@@ -32,10 +32,12 @@ create table loan(
 	loanid int auto_increment not null primary key,
     loanamount int,
     areacode int,
+    propertyname varchar(20),
     propertyid int,
     propertysq int,
     creditscore int,
     residence varchar(30),
+    status varchar(15) default "pending",
     id int
 );
 
