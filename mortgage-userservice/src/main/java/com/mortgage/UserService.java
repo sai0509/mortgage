@@ -41,5 +41,10 @@ public class UserService {
 		}
 		return str;
 	}
+	
+	public PersonalDetails getpersonaldetails(int id) {
+		PersonalDetails personalDetails = personalDetailsInterface.getPersonalDetailsById(id);
+		return personalDetails;
+	}
 
 }

@@ -10,4 +10,7 @@ public interface ClientUserService {
 	
 	public ResponseEntity<String> registeruserdetails(PersonalDetails personalDetails); 
 	
+	public PersonalDetails getdetails(int id);
+
+	
 }

@@ -18,19 +18,42 @@ public class Loan {
 	private int loanamount;
 	private int areacode;
 	private int creditscore;
+	private String propertyname;
 	private int propertyid;
 	private int propertysq;
 	private String residence;
+	private String status;
 	private int id;
+	
+	
+	
+	
 	
 	@Override
 	public String toString() {
 		return "Loan [loanid=" + loanid + ", loanamount=" + loanamount + ", areacode=" + areacode + ", creditscore="
-				+ creditscore + ", propertysq=" + propertysq + ", residence=" + residence + ", id=" + id + "]";
+				+ creditscore + ", propertyname=" + propertyname + ", propertyid=" + propertyid + ", propertysq="
+				+ propertysq + ", residence=" + residence + ", status=" + status + ", id=" + id + "]";
 	}
-	
-	
-	
+
+	public String getPropertyname() {
+		return propertyname;
+	}
+
+	public void setPropertyname(String propertyname) {
+		this.propertyname = propertyname;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+
 	public int getPropertyid() {
 		return propertyid;
 	}

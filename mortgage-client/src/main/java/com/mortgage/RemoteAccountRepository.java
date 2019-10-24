@@ -1,15 +1,12 @@
 package com.mortgage;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @author Dinesh.Rajput
- *
- */
 public class RemoteAccountRepository implements ClientAccountService {
 	
 	@Autowired
@@ -31,15 +28,29 @@ public class RemoteAccountRepository implements ClientAccountService {
 
 	@Override
 	public List<Loan> getloans(int id) {
-		List<Loan> loans = (List<Loan>) restTemplate.getForObject(serviceUrl + "/loan/" + id + "/getloans", Loan.class);
-		return loans;
+		Loan[] loans = restTemplate.getForObject(serviceUrl + "/loan/" + id + "/getloans", Loan[].class);
+		return Arrays.asList(loans);
 	}
-	
-	
 
-	
-		
+	@Override
+	public int loanamount(int loanid) {
+		ResponseEntity<Integer> amount = restTemplate.getForEntity(serviceUrl + "/loan/loanamount/" + loanid, Integer.class);
+		return amount.getBody();
 	}
+
+	@Override
+	public boolean approveloan(Loan loan) {
+		ResponseEntity<Boolean> result = restTemplate.postForEntity(serviceUrl + "/loan/approveloan", loan, boolean.class);
+		return result.getBody();
+	}
+
+	@Override
+	public boolean denyloan(int loanid) {
+	ResponseEntity<Boolean> result = restTemplate.getForEntity(serviceUrl + "/loan/denyloan/" + loanid, boolean.class);
+	return result.getBody();
+	}
+
+}
 	
 //	@Override
 //	public List<Account> getAllAccounts() {

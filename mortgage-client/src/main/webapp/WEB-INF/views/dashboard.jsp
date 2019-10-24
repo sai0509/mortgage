@@ -6,34 +6,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+a:link { COLOR: red; TEXT-DECORATION: none; font-weight: normal }
+a:visited { COLOR: red; TEXT-DECORATION: none; font-weight: normal }
+a:active { COLOR: black; TEXT-DECORATION: none }
+a:hover { COLOR: blue; TEXT-DECORATION: none; font-weight: none }</style>
 </head>
-<body>
+<body style="background-color: #f2f2f2">
+<h2 style="color: grey">${customer}</h2>
+
 <div align="center">
-	<table>
-		<tr>
-			<th>loanid</th>
-			<th>loanamount</th>
-			<th>areacode</th>
-			<th>propertyid</th>
-			<th>propertysq</th>
-			<th>creditscore</th>
-			<th>residence</th>
-			<th>userid</th>
-		</tr>
-	</table>
-	<form:forEach var = "loan" items = "${loans}">
-		<tr>
-			<td>${loan.loanid}</td>
-			<td>${loan.loanamount}</td>
-			<td>${loan.areacode}</td>
-			<td>${loan.propertyid}</td>
-			<td>${loan.propertysq}</td>
-			<td>${loan.creditscore}</td>
-			<td>${loan.residence}</td>
-			<td>${loan.id}</td>
-		</tr>
-	</form:forEach>
-	<a href = "loan" >NEW LOAN</a><br/><br/>
+	<h1><a href = "existingloans" >EXISTING LOANS</a></h1>
+	<h1><a href = "loan" >NEW LOAN</a><br/><br/></h1>
 </div>
 </body>
 </html>

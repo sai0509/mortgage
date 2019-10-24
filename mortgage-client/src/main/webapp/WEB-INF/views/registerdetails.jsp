@@ -8,46 +8,105 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+#Signup{
+ width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+   text-align: center;
+}
+#tb{
+  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+ 
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.row:after{
+content:"";
+display:table;
+clear:both;
+}
+
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
 <title>New Applicant</title>
 </head>
+
 <body>
     <div align="center">
-        <h1>New Applicant</h1>
+     <h1>New Applicant</h1>
         <form:form action="registeruserdetails" method="post" modelAttribute="personalDetails">
+       
         <table>
+          <div class="row">
+         
+          
+          
+          </div></div>
         <form:hidden path="id"/>
             <tr>
-                <td>FirstName</td>
-                <td><form:input path="firstname" /></td>
+                <td>First Name:</td>
+                <td><form:input path="firstname" placeholder="FirstName" id="tb"/></td>
             </tr>
             <tr>
-                <td>LastName:</td>
-                <td><form:input path="lastname" /></td>
+                <td>Last Name:</td>
+                <td><form:input path="lastname" placeholder="LastName" id="tb"/></td>
             </tr>
             <tr>
-                <td>DateOfJoin:</td>
-                <td> <form:input path="dob" type="date"/>
+                <td>Date Of Birth:</td>
+                <td> <form:input path="dob" type="date" placeholder="DateOfBirth" id="tb"/>
                 </td>
             </tr>
             <tr>
                 <td>Address:</td>
-                <td><form:input path="address" /></td>
+                <td><form:input path="address" placeholder="Address" id="tb"/></td>
             </tr>
             <tr>
                 <td> City:</td>
-                <td><form:input path="city" /></td>
+                <td><form:input path="city" placeholder="City" id="tb"/></td>
             </tr>
             <tr>
                 <td> State:</td>
-                <td><form:input path="state" /></td>
+                <td><form:input path="state" placeholder="State" id="tb"/></td>
             </tr>
             <tr>
-                <td> PinCode:</td>
-                <td><form:input path="pincode" /></td>
+                <td> Pin Code:</td>
+                <td><form:input path="pincode" placeholder="PinCode" id="tb"/></td>
             </tr>
             <tr>
                 <td> Mobile No:</td>
-                <td><form:input path="mobileno" /></td>
+                <td><form:input path="mobileno" placeholder="MobileNo" id="tb"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><input type="submit" value="Register"></td>

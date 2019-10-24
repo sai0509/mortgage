@@ -49,5 +49,11 @@ public class RemoteUserRepository implements ClientUserService {
 		ResponseEntity<String> result1 = restTemplate.postForEntity(serviceUrl + "/user/registeruserdetails", personalDetails, String.class);
 		return result1;
 	}
+	
+	@Override
+	public PersonalDetails getdetails(int id) {
+		PersonalDetails personalDetails = restTemplate.getForObject(serviceUrl + "/user/getpersonaldetails/" + id, PersonalDetails.class);
+		return personalDetails;
+	}
 
 }

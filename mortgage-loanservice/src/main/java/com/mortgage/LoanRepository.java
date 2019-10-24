@@ -11,4 +11,8 @@ public interface LoanRepository extends CrudRepository<Loan, Integer>{
 	public List<Loan> getLoanByid(int id);
 	
 	public Loan getLoanByPropertyid(int propertyid);
+	
+	public Loan getLoanByLoanid(int loanid);
+	
+	public Loan getLoanByIdAndPropertyid(int id, int propertyid);
 }
